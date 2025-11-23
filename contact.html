@@ -9,29 +9,11 @@
 </head>
 <body>
 
-<header>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="assets/logo.png" alt="Pixel Phantoms Logo">
-            <span>Pixel Phantoms</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a class="active" href="contact.html">Contact</a></li>
-            <li>
-                <div class="theme-toggle">
-                    <input type="checkbox" id="theme-switch" class="theme-switch">
-                    <label for="theme-switch" class="theme-label">
-                        <div class="toggle-thumb"></div>
-                        <span class="sun-icon">☀️</span>
-                        <span class="moon-icon">🌙</span>
-                    </label>
-                </div>
-            </li>
-        </ul>
-    </nav>
-</header>
+    <div id="navbar-placeholder"></div>
+    <script src="js/navbar.js"></script>
+    <script>
+        renderNavbar();
+    </script>
 
 <section class="content">
     <h2>Contact Us</h2>
@@ -52,99 +34,11 @@
     </div>
 </section>
 
-<!-- NEW COMPREHENSIVE FOOTER -->
-<footer class="site-footer">
-    <div class="footer-container">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <img src="assets/logo.png" alt="Pixel Phantoms Logo">
-                    <span class="brand-name">Pixel Phantoms</span>
-                </div>
-                <p class="footer-description">
-                    A community of passionate developers, designers, and creators building amazing digital experiences.
-                </p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Discord">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-links">
-                <div class="link-group">
-                    <h3 class="link-group-title">Explore</h3>
-                    <ul class="link-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="team.html">Our Team</a></li>
-                        <li><a href="events.html">Events</a></li>
-                    </ul>
-                </div>
-
-                <div class="link-group">
-                    <h3 class="link-group-title">Community</h3>
-                    <ul class="link-list">
-                        <li><a href="pages/community.html">Community</a></li>
-                        <li><a href="pages/projects.html">Projects</a></li>
-                        <li><a href="pages/gallery.html">Gallery</a></li>
-                        <li><a href="pages/join-us.html">Join Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="link-group">
-                    <h3 class="link-group-title">Support</h3>
-                    <ul class="link-list">
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-newsletter">
-                <h3 class="newsletter-title">Stay Updated</h3>
-                <p class="newsletter-description">
-                    Subscribe to our newsletter for the latest updates and events.
-                </p>
-                <form class="newsletter-form">
-                    <div class="input-group">
-                        <input type="email" class="newsletter-input" placeholder="Enter your email" required>
-                        <button type="submit" class="newsletter-btn">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                    <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
-                </form>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="footer-bottom-content">
-                <p class="copyright">
-                    &copy; 2025 Pixel Phantoms. All rights reserved.
-                </p>
-                <div class="footer-bottom-links">
-                    <a href="#" class="bottom-link">Privacy</a>
-                    <span class="separator">|</span>
-                    <a href="#" class="bottom-link">Terms</a>
-                    <span class="separator">|</span>
-                    <a href="#" class="bottom-link">Sitemap</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+    <script>
+        renderFooter();
+    </script>
 
 <script src="js/theme.js"></script>
 </body>
