@@ -2,58 +2,92 @@
 
 /* HERO SECTION */
 .help-hero {
-    padding: 100px 20px;
+    padding: 120px 20px 80px;
     text-align: center;
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--card-bg) 100%);
     border-bottom: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative Circle for Animation */
+.help-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 170, 255, 0.03) 0%, transparent 70%);
+    animation: rotateHero 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotateHero {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .help-hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 15px;
     background: linear-gradient(135deg, var(--text-primary), var(--accent-color));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    opacity: 0; /* For GSAP entry */
+    transform: translateY(20px);
 }
 
 .help-hero p {
     color: var(--text-secondary);
     font-size: 1.2rem;
     margin-bottom: 40px;
+    opacity: 0; /* For GSAP entry */
+    transform: translateY(20px);
 }
 
 .search-wrapper {
     max-width: 600px;
     margin: 0 auto;
     position: relative;
+    opacity: 0; /* For GSAP entry */
+    transform: scale(0.9);
 }
 
 .search-icon {
     position: absolute;
-    left: 20px;
+    left: 25px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--text-secondary);
+    color: var(--accent-color);
     font-size: 1.2rem;
+    pointer-events: none;
 }
 
 .help-search {
     width: 100%;
-    padding: 18px 20px 18px 50px;
+    padding: 18px 20px 18px 60px;
     border-radius: 50px;
     border: 2px solid var(--border-color);
     background: var(--card-bg);
     color: var(--text-primary);
     font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-sizing: border-box;
 }
 
 .help-search:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 10px 30px rgba(0, 170, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 170, 255, 0.15);
+    transform: translateY(-2px);
 }
 
 /* TOPIC GRID */
@@ -67,6 +101,7 @@
     text-align: center;
     font-size: 2rem;
     margin-bottom: 50px;
+    color: var(--text-primary);
 }
 
 .help-grid {
@@ -77,139 +112,235 @@
 
 .help-card {
     background: var(--card-bg);
-    padding: 30px;
-    border-radius: 16px;
+    padding: 40px 30px;
+    border-radius: 20px;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0; /* For Stagger Animation */
+    transform: translateY(30px);
 }
 
 .help-card:hover {
     transform: translateY(-10px);
     border-color: var(--accent-color);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.help-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), #0088cc);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.help-card:hover::before {
+    transform: scaleX(1);
 }
 
 .icon-box {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     background: rgba(0, 170, 255, 0.1);
     color: var(--accent-color);
-    border-radius: 12px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.help-card:hover .icon-box {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .help-card h3 {
     margin: 0 0 15px 0;
     color: var(--text-primary);
+    font-size: 1.4rem;
 }
 
 .help-card p {
     color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 20px;
+    line-height: 1.7;
+    margin-bottom: 25px;
 }
 
 .read-more {
     color: var(--accent-color);
     text-decoration: none;
     font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.3s ease;
 }
 
-/* GSAP HORIZONTAL SCROLL STYLES */
+.read-more:hover {
+    gap: 10px;
+}
+
+/* GSAP HORIZONTAL SCROLL STYLES - FIXED */
 .team-scroll-wrapper {
-    overflow: hidden; /* Hide scrollbars */
-    /* Height is controlled by JS pinning */
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Viewport height for the pinning container */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
 
-.team-header-sticky {
-    padding: 40px 20px;
+.team-intro {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
     text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: 1px solid var(--border-color);
 }
 
+[data-theme="dark"] .team-intro {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.team-intro h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+}
+
+/* Important: fit-content allows it to be exactly as wide as its children */
 .horizontal-container {
-    width: 400%; /* 4 Panels x 100% width */
-    height: 100vh;
     display: flex;
     flex-wrap: nowrap;
+    width: fit-content; 
+    height: 100%;
 }
 
 .team-panel {
-    width: 100vw;
-    height: 100vh;
+    width: 100vw; /* Each panel takes full viewport width */
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    /* Optional distinct backgrounds per panel or keep consistent */
-    border-right: 1px solid rgba(255,255,255,0.05);
+    flex-shrink: 0; /* Prevent shrinking */
+    position: relative;
 }
+
+/* Subtle gradients to distinguish panels */
+.panel-1 { background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(0, 170, 255, 0.05) 100%); }
+.panel-2 { background: linear-gradient(135deg, rgba(0, 170, 255, 0.05) 0%, var(--bg-primary) 100%); }
+.panel-3 { background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(118, 75, 162, 0.05) 100%); }
+.panel-4 { background: linear-gradient(135deg, rgba(118, 75, 162, 0.05) 0%, var(--bg-primary) 100%); }
 
 .team-desc-card {
     background: var(--card-bg);
-    padding: 50px;
-    border-radius: 20px;
-    max-width: 600px;
-    border: 1px solid var(--accent-color);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    padding: 60px;
+    border-radius: 30px;
+    max-width: 700px;
+    width: 90%;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
     position: relative;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    /* Initial state for animation */
+    transform: translateY(50px) scale(0.95);
+    opacity: 0.5;
+    transition: all 0.5s ease-out;
+}
+
+/* When the panel is active/centered (handled by JS/CSS intersection if needed, 
+   but here we just style it to look good always) */
+.team-desc-card.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
 }
 
 .role-badge {
     position: absolute;
-    top: -15px;
-    left: 40px;
-    background: var(--accent-color);
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--accent-color), #0088cc);
     color: white;
-    padding: 5px 20px;
-    border-radius: 20px;
+    padding: 8px 25px;
+    border-radius: 50px;
     font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.3);
+    white-space: nowrap;
 }
 
 .team-desc-card h3 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-top: 10px;
     margin-bottom: 20px;
     color: var(--text-primary);
+    text-align: center;
 }
 
 .team-desc-card p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.8;
     color: var(--text-secondary);
+    text-align: center;
 }
 
 .extra-info {
-    margin-top: 30px;
+    margin-top: 40px;
     font-style: italic;
-    border-left: 4px solid var(--accent-color);
-    padding-left: 20px;
-    color: var(--text-primary) !important;
+    font-weight: 500;
+    color: var(--accent-color) !important;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
 }
 
 /* CTA SECTION */
 .help-cta {
-    padding: 100px 20px;
+    padding: 120px 20px;
     text-align: center;
     background: var(--bg-primary);
+    position: relative;
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0; /* For ScrollTrigger */
+    transform: translateY(30px);
 }
 
 .btn-primary {
     display: inline-block;
     background: var(--accent-color);
     color: white;
-    padding: 15px 40px;
+    padding: 18px 50px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 20px;
-    transition: transform 0.2s;
+    font-size: 1.1rem;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 170, 255, 0.3);
 }
 
 .btn-primary:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 170, 255, 0.4);
 }
