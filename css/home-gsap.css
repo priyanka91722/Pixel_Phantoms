@@ -1,0 +1,171 @@
+/* --- HERO SECTION --- */
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-primary);
+}
+
+.hero-text-mask {
+    overflow: hidden; /* Critical for the "slide up" reveal */
+}
+
+.hero-title {
+    font-size: 8vw;
+    line-height: 1;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -2px;
+    transform: translateY(100%); /* Start hidden */
+}
+
+.hero-title.outline {
+    -webkit-text-stroke: 2px var(--text-primary);
+    color: transparent;
+    opacity: 0.5;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: var(--text-secondary);
+    opacity: 0;
+}
+
+.hero-cta {
+    margin-top: 40px;
+    opacity: 0;
+}
+
+.btn-glow {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 0 20px var(--accent-color);
+    transition: 0.3s;
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 40px var(--accent-color);
+    transform: scale(1.05);
+}
+
+/* --- ABOUT REVEAL --- */
+.about-section {
+    padding: 100px 20px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.reveal-text {
+    font-size: 2.5rem;
+    line-height: 1.4;
+    max-width: 900px;
+    color: var(--text-secondary);
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* --- HORIZONTAL SCROLL (THE FRAMER EFFECT) --- */
+.horizontal-section {
+    width: 100%;
+    height: 100vh; /* Necessary for pinning */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+.pin-wrap {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 250vw; /* Width depends on number of cards */
+}
+
+.pin-content {
+    display: flex;
+    gap: 50px;
+    padding: 0 5vw;
+}
+
+.h-card {
+    width: 400px;
+    height: 500px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s;
+    box-shadow: var(--shadow);
+}
+
+.h-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.h-card-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.h-card h3 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.h-card p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.h-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* --- STATS --- */
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 100px 0;
+    background: var(--bg-primary);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h2 {
+    font-size: 4rem;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-title { font-size: 15vw; }
+    .reveal-text { font-size: 1.5rem; }
+    .h-card { width: 80vw; height: 60vh; }
+}

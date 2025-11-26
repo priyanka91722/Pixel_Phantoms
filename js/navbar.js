@@ -26,3 +26,5 @@ function renderNavbar(basePath = '') {
     `;
     document.getElementById('navbar-placeholder').innerHTML = navbarHTML;
 }
+
+const currentPage = window.location.pathname.split("/").pop() || 'index.html';

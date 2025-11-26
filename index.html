@@ -3,51 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Phantoms | Home</title>
+    <title>Pixel Phantoms | The Future of Tech</title>
+    
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/back-to-top.css">
+    <link rel="stylesheet" href="css/home-gsap.css"> <link rel="stylesheet" href="css/back-to-top.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="smooth-scroll-wrapper">
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="assets/logo.png" alt="Pixel Phantoms Logo">
-                <span>Pixel Phantoms</span>
-            </div>
-            <ul class="nav-links">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li>
-                    <div class="theme-toggle">
-                        <input type="checkbox" id="theme-switch" class="theme-switch">
-                        <label for="theme-switch" class="theme-label">
-                            <div class="toggle-thumb"></div>
-                            <span class="sun-icon">☀️</span>
-                            <span class="moon-icon">🌙</span>
-                        </label>
+    <div id="navbar-placeholder"></div>
+
+    <main id="main-container">
+        
+        <section class="hero-section" id="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-text-mask">
+                    <h1 class="hero-title">Pixel</h1>
+                </div>
+                <div class="hero-text-mask">
+                    <h1 class="hero-title outline">Phantoms</h1>
+                </div>
+                <p class="hero-subtitle">From Students, For Students.</p>
+                
+                <div class="hero-cta">
+                    <a href="pages/join-us.html" class="btn-glow">Join the Revolution</a>
+                    <div class="scroll-indicator">
+                        <span>Scroll to Explore</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
+                </div>
+            </div>
+        </section>
 
-    <section class="hero">
-        <h1>Pixel Phantoms</h1>
-        <p>From Students, For Students.</p>
-    </section>
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2 class="section-heading">We Are <span class="highlight">Builders.</span></h2>
+                <p class="reveal-text">
+                    Pixel Phantoms isn't just a club. It's a collective of <span class="highlight">creators</span>, 
+                    <span class="highlight">coders</span>, and <span class="highlight">visionaries</span>. 
+                    We turn caffeine into code and ideas into reality.
+                </p>
+            </div>
+        </section>
 
-    <div id="footer-placeholder"></div>
+        <section class="horizontal-section" id="showcase">
+            <div class="pin-wrap">
+                <div class="pin-content">
+                    
+                    <div class="h-card">
+                        <div class="h-card-inner">
+                            <div class="h-card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <h3>Workshops</h3>
+                            <p>Hands-on learning sessions on AI, Web Dev, and Cybersec.</p>
+                            <a href="events.html" class="h-link">View Events &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="h-card dark-variant">
+                        <div class="h-card-inner">
+                            <div class="h-card-icon"><i class="fas fa-code"></i></div>
+                            <h3>Hackathons</h3>
+                            <p>24-hour coding marathons to test your limits and creativity.</p>
+                            <a href="pages/gallery.html" class="h-link">See Gallery &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="h-card">
+                        <div class="h-card-inner">
+                            <div class="h-card-icon"><i class="fab fa-github"></i></div>
+                            <h3>Open Source</h3>
+                            <p>Contribute to real-world projects and build your GitHub profile.</p>
+                            <a href="pages/projects.html" class="h-link">View Repos &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="h-card dark-variant">
+                        <div class="h-card-inner">
+                            <div class="h-card-icon"><i class="fas fa-users"></i></div>
+                            <h3>Community</h3>
+                            <p>Connect with mentors and like-minded peers.</p>
+                            <a href="pages/community.html" class="h-link">Join Discord &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stat-item">
+                <h2 class="counter" data-target="500">0</h2>
+                <p>Members</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="counter" data-target="50">0</h2>
+                <p>Projects</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="counter" data-target="120">0</h2>
+                <p>Events</p>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder" style="position: relative; z-index: 2;"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="js/navbar.js"></script>
     <script src="js/footer.js"></script>
-    <script>
-        renderFooter();
-    </script>
-
     <script src="js/theme.js"></script>
     <script src="js/back-to-top.js"></script>
+
+    <script src="js/home-gsap.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderNavbar();
+            renderFooter();
+        });
+    </script>
 </body>
 </html>
