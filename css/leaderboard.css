@@ -527,3 +527,218 @@ body.hud-mode {
     .cube-wrapper { transform: scale(0.8) rotateX(-20deg) rotateY(-30deg); }
     .physics-grid { grid-template-columns: 1fr; }
 }
+
+/* ... (Previous CSS remains same) ... */
+
+/* --- SECTION MANAGEMENT --- */
+.hud-section {
+    display: none; /* Hidden by default */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.hud-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 2. TEAMS VIEW (Roster) --- */
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    height: 100%;
+}
+
+.roster-card {
+    background: var(--panel-bg);
+    border: var(--panel-border);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.roster-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.roster-icon {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    color: #000;
+}
+.roster-icon.gold { background: #FFD700; box-shadow: 0 0 15px #FFD700; }
+.roster-icon.silver { background: #C0C0C0; box-shadow: 0 0 15px #C0C0C0; }
+.roster-icon.bronze { background: #CD7F32; box-shadow: 0 0 15px #CD7F32; }
+
+.roster-header h3 {
+    margin: 0;
+    color: var(--text-main);
+    font-family: var(--font-hud);
+}
+
+.roster-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+.roster-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: 0.2s;
+}
+
+.roster-item:hover {
+    background: rgba(0, 243, 255, 0.05);
+    padding-left: 15px;
+}
+
+.roster-item img {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--neon-cyan);
+}
+
+/* --- 3. PROJECTS VIEW (Hex Grid) --- */
+.hex-grid-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+    height: 600px;
+}
+
+.hex-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+}
+
+.hex-item {
+    width: 100px; height: 110px;
+    background: rgba(0, 243, 255, 0.1);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid var(--neon-cyan); /* Fallback border */
+}
+
+.hex-item:hover {
+    background: var(--neon-cyan);
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+.hex-item i { font-size: 1.5rem; margin-bottom: 5px; }
+.hex-item span { font-size: 0.7rem; font-weight: bold; }
+
+.project-display {
+    width: 300px;
+    padding: 30px;
+    background: var(--panel-bg);
+    border: 1px solid var(--neon-purple);
+    border-radius: 12px;
+}
+
+/* --- 4. SETTINGS VIEW --- */
+.settings-panel {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--panel-bg);
+    border: var(--panel-border);
+    padding: 40px;
+    border-radius: 16px;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px; height: 24px;
+}
+
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+
+.toggle-switch span {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255,255,255,0.1);
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.toggle-switch span:before {
+    position: absolute;
+    content: "";
+    height: 18px; width: 18px;
+    left: 3px; bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.toggle-switch input:checked + span {
+    background-color: var(--neon-cyan);
+}
+
+.toggle-switch input:checked + span:before {
+    transform: translateX(26px);
+}
+
+.hud-select {
+    background: rgba(0,0,0,0.5);
+    color: var(--text-main);
+    border: 1px solid var(--text-dim);
+    padding: 5px 10px;
+    font-family: var(--font-mono);
+}
+
+.system-log {
+    margin-top: 30px;
+    background: #000;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--neon-green);
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 900px) {
+    .roster-grid { grid-template-columns: 1fr; }
+    .hex-grid-wrapper { flex-direction: column; height: auto; }
+}
