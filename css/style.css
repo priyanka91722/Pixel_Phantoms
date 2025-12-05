@@ -1737,3 +1737,32 @@ body {
         font-size: 1rem;
     }
 }
+
+
+.project-lead-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    cursor: pointer;
+}
+
+.project-lead-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 18px 40px rgba(0, 170, 255, 0.22);
+    border-color: var(--accent-color);
+}
+
+.project-lead-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transition: transform 0.35s ease;
+}
+
+.project-lead-card:hover img {
+    transform: scale(1.08);
+}
