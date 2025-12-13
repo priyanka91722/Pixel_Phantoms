@@ -1,23 +1,25 @@
 [
-    {
-        "title": "Winter Code Jam 2025",
-        "date": "December 10, 2025",
-        "location": "Main Auditorium",
-        "description": "End the year with a code-fest! Solve algorithmic challenges and win exciting prizes.",
-        "link": "#"
-    },
-    {
-        "title": "Cloud Computing Summit",
-        "date": "January 15, 2026",
-        "location": "Seminar Hall 1",
-        "description": "Learn about AWS, Azure, and Google Cloud from certified industry experts.",
-        "link": "#"
-    },
-    {
-        "title": "HackTheFuture 2026",
-        "date": "February 10, 2026",
-        "location": "Innovation Lab",
-        "description": "A 48-hour hackathon focused on building sustainable tech solutions.",
-        "link": "#"
-    }
+  {
+    "id": "codestorm-2025",
+    "title": "CodeStorm 2025",
+    "date": "April 10–11, 2025",
+    "location": "Innovation Lab",
+    "banner": "assets/events/codestorm.jpg",
+    "status": "upcoming",
+    "shortDescription": "A 24-hour competitive coding hackathon.",
+    "fullDescription": "CodeStorm 2025 is a 24-hour hackathon where students solve real-world problems using technology.",
+    "registrationLink": "#"
+  },
+  {
+    "id": "ai-workshop",
+    "title": "AI & ML Workshop",
+    "date": "May 5, 2025",
+    "location": "Seminar Hall",
+    "banner": "assets/events/ai.jpg",
+    "status": "upcoming",
+    "shortDescription": "Hands-on workshop on AI and ML basics.",
+    "fullDescription": "This workshop introduces AI and Machine Learning concepts with practical examples.",
+    "registrationLink": "#"
+  }
+
 ]

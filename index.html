@@ -55,16 +55,21 @@
             </div>
             <div class="hackathon-layout">
                 <div class="hack-main-card" data-tilt>
-                    <div class="hack-badge blink">REGISTRATION OPEN</div>
+                    <div class="hack-badge blink" id="home-event-status">UPCOMING</div>
                     <img src="https://picsum.photos/seed/hackathon_hero/800/600" alt="Hackathon Coding" class="hack-bg-img" loading="lazy">
                     <div class="hack-overlay">
-                        <h3>CODESTORM_2025</h3>
-                        <p>The ultimate test of logic. Build the future in 24 hours.</p>
-                        <div class="hack-meta">
-                            <span><i class="far fa-calendar-alt" aria-hidden="true"></i> April 10-11</span>
-                            <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Innovation Lab</span>
-                        </div>
-                        <a href="events.html" class="btn-hollow">Details <span aria-hidden="true">&rarr;</span></a>
+                        <h3 id="home-event-title">Loading Event...</h3>
+<p id="home-event-desc">Fetching latest event details.</p>
+<div class="hack-meta">
+  <span id="home-event-date">
+    <i class="far fa-calendar-alt"></i> --
+  </span>
+  <span id="home-event-location">
+    <i class="fas fa-map-marker-alt"></i> --
+  </span>
+</div>
+<a href="events.html" class="btn-hollow">Show All Events →</a>
+
                     </div>
                 </article>
                 <div class="hack-details-grid">
