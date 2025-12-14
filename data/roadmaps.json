@@ -677,5 +677,99 @@
         ]
       }
     ]
-  }
+  },
+  "ui-ux": {
+  "title": "UI_UX_Protocol_v1.0",
+  "description": "Initialize sequence: Empathy to Pixel Perfection.",
+  "phases": [
+    {
+      "id": "phase_1",
+      "title": "PHASE_01: Visual_Foundations",
+      "status": "unlocked",
+      "modules": [
+        {
+          "title": "Design Principles",
+          "desc": "Contrast, Repetition, Alignment, Proximity (C.R.A.P).",
+          "link": "https://m2.material.io/design/introduction"
+        },
+        {
+          "title": "Typography & Grids",
+          "desc": "Type scales, vertical rhythm, and 8pt grid systems.",
+          "link": "https://fonts.google.com/knowledge"
+        },
+        {
+          "title": "Color Theory",
+          "desc": "60-30-10 rule, accessibility contrast, and emotional impact.",
+          "link": "https://color.adobe.com/create/color-wheel"
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "title": "PHASE_02: UX_Research_Ops",
+      "status": "locked",
+      "modules": [
+        {
+          "title": "User Personas",
+          "desc": "Defining the target audience and empathy mapping.",
+          "link": "https://www.nngroup.com/articles/persona/"
+        },
+        {
+          "title": "User Journey Maps",
+          "desc": "Visualizing the user's path through the application.",
+          "link": "https://www.nngroup.com/articles/journey-mapping-101/"
+        },
+        {
+          "title": "Information Architecture",
+          "desc": "Sitemaps, card sorting, and organizing content.",
+          "link": "https://www.usability.gov/what-and-why/information-architecture.html"
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "title": "PHASE_03: Interface_Construction",
+      "status": "locked",
+      "modules": [
+        {
+          "title": "Figma Mastery",
+          "desc": "Auto Layout, Components, and Variants.",
+          "link": "https://help.figma.com/hc/en-us"
+        },
+        {
+          "title": "Wireframing",
+          "desc": "Low-fidelity sketches to structure layout logic.",
+          "link": "https://balsamiq.com/learn/articles/what-are-wireframes/"
+        },
+        {
+          "title": "Prototyping",
+          "desc": "Connecting screens and defining interactions.",
+          "link": "https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma"
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "title": "PHASE_04: System_&_Handoff",
+      "status": "locked",
+      "modules": [
+        {
+          "title": "Design Systems",
+          "desc": "Atomic Design principles and component libraries.",
+          "link": "https://atomicdesign.bradfrost.com/chapter-2/"
+        },
+        {
+          "title": "Accessibility (a11y)",
+          "desc": "WCAG 2.1 guidelines and screen reader support.",
+          "link": "https://www.w3.org/WAI/standards-guidelines/wcag/"
+        },
+        {
+          "title": "Developer Handoff",
+          "desc": "Redlining, asset export, and design specs.",
+          "link": "https://zeplin.io/"
+        }
+      ]
+    }
+  ]
+}
 }
