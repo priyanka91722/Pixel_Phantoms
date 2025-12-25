@@ -1,92 +1,95 @@
-function renderFooter(basePath = '') {
+function renderFooter(basePath = "") {
+    const placeholder = document.getElementById("footer-placeholder");
+    
+    if (!placeholder) {
+        console.warn('Footer placeholder not found');
+        return;
+    }
+
     const footerHTML = `
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3 class="footer-title">Pixel Phantoms</h3>
-                <p class="footer-description">Empowering the next generation of tech innovators through collaboration, learning, and creativity.</p>
-                <div class="social-links">
-    <a
-  href="https://github.com/sayeeg-11/Pixel_Phantoms"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="social-link github"
-  aria-label="GitHub"
->
-  <i class="fab fa-github"></i>
-</a>
-
-    <a
-  href="https://www.instagram.com/pixelphantoms_?igsh=aWxhbGhsM3piaHFj"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="social-link instagram"
-  aria-label="Instagram"
->
-  <i class="fab fa-instagram" aria-hidden="true"></i>
-</a>
-
-<a
-  href="https://discord.com/channels/1049667734025289729/1440205974806986844"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="social-link discord"
-  aria-label="Discord"
->
-  <i class="fab fa-discord" aria-hidden="true"></i>
-</a>
-
-<a
-  href="https://www.linkedin.com/company/pixel-phantoms/"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="social-link linkedin"
-  aria-label="LinkedIn"
->
-  <i class="fab fa-linkedin" aria-hidden="true"></i>
-</a>
-
-<a
-  href="mailto:contact@pixelphantoms.com"
-  class="social-link email"
-  aria-label="Email"
->
-  <i class="far fa-envelope" aria-hidden="true"></i>
-</a>
-
-</div>
-
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-subtitle">Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="${basePath}about.html">About Us</a></li>
-                    <li><a href="${basePath}events.html">Events</a></li>
-                    <li><a href="${basePath}pages/contributors.html">Team</a></li>
-                    <li><a href="${basePath}contact.html">Contact</a></li>
-                    <li><a href="${basePath}pages/help.html">Help</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-subtitle">Resources</h4>
-                <ul class="footer-links">
-                    <li><a href="${basePath}pages/projects.html">Projects</a></li>
-                    <li><a href="${basePath}pages/leaderboard.html">Leaderboard</a></li>
-                    <li><a href="${basePath}pages/community.html">Community</a></li>
-                    <li><a href="${basePath}pages/terms.html">Terms of Service</a></li>
-                    <li><a href="${basePath}pages/privacy.html">Privacy Policy</a></li>
-                </ul>
-            </div>
+    <footer class="site-footer dynamic-electronic">
+        <div class="signal-grid" aria-hidden="true">
+            <div class="signal-line horizontal"></div>
+            <div class="signal-line vertical"></div>
+            <div class="bolt-emitter left"></div>
+            <div class="bolt-emitter right"></div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Pixel Phantoms. All rights reserved.</p>
+
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo glitch-hover">
+                        <img src="${basePath}assets/logo.png" alt="Pixel Phantoms Logo">
+                        <span class="brand-name neon-text">Pixel Phantoms</span>
+                    </div>
+                    <p class="footer-description">
+                        A community of passionate developers,<br>
+                        designers, and creators building amazing<br>
+                        digital experiences.
+                    </p>
+                    <div class="social-links dynamic-signals">
+                        <a href="https://github.com/sayeeg-11/Pixel_Phantoms" class="social-link" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/pixelphantoms_" class="social-link" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="https://discord.com/" class="social-link" target="_blank" rel="noopener"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.linkedin.com/company/pixel-phantoms/" class="social-link" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-grid">
+                    <div class="link-group">
+                        <h3 class="link-group-title">Explore</h3>
+                        <ul class="link-list">
+                            <li><a href="${basePath}index.html">Home</a></li>
+                            <li><a href="${basePath}about.html">About Us</a></li>
+                            <li><a href="${basePath}pages/contributors.html">Our Team</a></li>
+                            <li><a href="${basePath}events.html">Events</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3 class="link-group-title">Community</h3>
+                        <ul class="link-list">
+                            <li><a href="${basePath}pages/community.html">Community</a></li>
+                            <li><a href="${basePath}pages/projects.html">Projects</a></li>
+                            <li><a href="${basePath}pages/leaderboard.html">Leaderboard</a></li>
+                            <li><a href="${basePath}pages/join-us.html">Join Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3 class="link-group-title">Support</h3>
+                        <ul class="link-list">
+                            <li><a href="${basePath}contact.html">Contact</a></li>
+                            <li><a href="${basePath}pages/help.html">Help Center</a></li>
+                            <li><a href="${basePath}CONTRIBUTING.md">Contributor Guide</a></li>
+                            <li><a href="${basePath}CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h3 class="newsletter-title">Stay Updated</h3>
+                    <p class="newsletter-description">Subscribe to our newsletter for the latest updates.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">&copy; 2025 Pixel Phantoms. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="${basePath}pages/privacy.html" class="bottom-link">Privacy</a> | 
+                        <a href="${basePath}pages/terms.html" class="bottom-link">Terms</a> | 
+                        <a href="${basePath}pages/tutorials/phantom-node.html" class="bottom-link">Tutorials</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
     `;
-
-}
-
-// Export function for use in other files
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { renderFooter };
+    
+    placeholder.innerHTML = footerHTML;
 }
